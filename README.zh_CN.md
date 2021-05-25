@@ -1,10 +1,10 @@
 # Shiro key检测
-
-
-
 golang 开发，多平台支持。
+
 为了适应不同目标不同网络情况，增加了多种http请求参数，如：指定请求超时时间、每次请求间隔时间、http代理。
+
 内置了129个key，默认支持AES-CBC和AES-GCM两种模式检测。
+
 支持对ysoserial 生成的payload进行加密，生成rememberMe字段，进行利用。
 
 ## 用法
