@@ -2,6 +2,11 @@
 
 [中文介绍](README.zh_CN.md)
 
+2022.8.28 Update content:
+1. You can now use the "-reqcookie" parameter to customize the "rememberMe" value sent by default in the cookie field of the request header.
+2. You can also use the "-respheader" parameter to customize the "rememberMe" value detected by default in the response header
+3. Optimize the detection process
+
 Golang development, multi-platform support.
 
 In order to adapt to different targets and different network conditions, a variety of http request parameters have been added, such as: specified request timeout, each request interval, http proxy.
@@ -34,6 +39,10 @@ Usage of ./ShiroKeyCheck:
     	Target url（Needed）
   -ua string
     	User-Agent (default "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36")
+  -reqcookie string
+    	Customize the cookie name in the request packet to be detected (Default detection "rememberMe" string) (default "rememberMe")
+  -respheader string
+    	Customize the header name in the response packet to be detected (Default detection "rememberMe" string) (default "rememberMe")
 ```
 
 ## keyCheck

@@ -12,6 +12,9 @@ var (
 	PostContent  string
 	SerFile      string
 	Aes_mode     string
+	RespHeader   string
+	ReqHeader    string
 	Timeout      int
 	Interval     int
+	Timeoutcount int = 0
 )

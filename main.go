@@ -1,8 +1,8 @@
 package main
 
-//CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o ShiroKeyCheckLinux main.go
-//CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o ShiroKeyCheck.exe main.go
-//go build -ldflags="-s -w" -o ShiroKeyCheck main.go && upx -9 server
+//CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o ShiroKeyCheck_linux-arm64 main.go
+//CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o ShiroKeyCheck_windows-amd64.exe main.go
+//go build -ldflags="-s -w" -o ShiroKeyCheck_darwin-arm64 main.go && upx -9 server
 import (
 	"ShiroKeyCheck/AES_Encrypt"
 	"ShiroKeyCheck/Function"
@@ -29,6 +29,8 @@ func GetCommandArgs() {
 	flag.StringVar(&GlobalVar.Pointkey, "key", "", "Specify the key and use CBC and GCM modes for detection")
 	flag.StringVar(&GlobalVar.Aes_mode, "mode", "", "Specify CBC or GCM encryption mode (only valid for -ser parameter)")
 	flag.StringVar(&GlobalVar.SerFile, "ser", "", "Encrypt the bytecode file to generate the RememberMe field")
+	flag.StringVar(&GlobalVar.RespHeader, "respheader", "rememberMe", "Customize the header name in the response packet to be detected")
+	flag.StringVar(&GlobalVar.ReqHeader, "reqcookie", "rememberMe", "Customize the cookie name in the request packet to be detected")
 
 	flag.Parse()
 }

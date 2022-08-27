@@ -1,4 +1,10 @@
 # Shiro key检测
+
+2022.8.28 更新内容：
+1. 现在可使用"-reqcookie" 参数自定义请求头的cookie字段默认发送的"rememberMe" 值。
+2. 也可使用"-respheader" 参数自定义响应头中默认检测的"rememberMe" 值
+3. 对检测过程进行优化
+
 golang 开发，多平台支持。
 
 为了适应不同目标不同网络情况，增加了多种http请求参数，如：指定请求超时时间、每次请求间隔时间、http代理。
@@ -6,6 +12,7 @@ golang 开发，多平台支持。
 内置了129个key，默认支持AES-CBC和AES-GCM两种模式检测。
 
 支持对ysoserial 生成的payload进行加密，生成rememberMe字段，进行利用。
+
 
 ## 用法
 
@@ -31,6 +38,10 @@ Usage of ./ShiroKeyCheck:
     	目标url（必须）
   -ua string
     	User-Agent (default "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36")
+  -reqcookie string
+    	自定义检测请求包中的cookie名称（默认值为“rememberMe”）
+  -respheader string
+    	自定义检测响应包中的header名称（默认值为“rememberMe”）
 ```
 ### key检测
 
